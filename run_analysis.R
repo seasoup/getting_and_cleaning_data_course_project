@@ -1,5 +1,8 @@
 library(stringr)
 
+#run_analysis loads data from the Human Activity Recognition Using Smartphones Dataset and runs analysis
+# on it as described in the README.md and CodeBook.md files.
+
 run_analysis <- function () {
   # Merges the training and the test sets to create one data set.
   test_data <- read.table("test/X_test.txt")
@@ -36,9 +39,9 @@ run_analysis <- function () {
 
   # rearrange columns so subject and activity label are first
   relevant_data<-relevant_data[c(80,81,1:79,82)]
-  output_tidy_data_summary(relevant_data)
+
   #Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
-  relevant_data
+  output_tidy_data_summary(relevant_data)
 }
 
 # This function takes the names of all of the columns and cleans them up
@@ -67,4 +70,5 @@ output_tidy_data_summary <- function (results) {
   agg_data <- aggregate(results, list(results$activity_numeric, results$subject), function(x) ifelse(is.numeric(x), mean(x),x ))
   agg_data <- agg_data[c(3:84,1,2)]
   write.csv(agg_data, "data_out.txt")
+  agg_data
 }

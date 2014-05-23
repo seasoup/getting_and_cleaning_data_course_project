@@ -6,7 +6,7 @@ This package runs an analysis over the Human Activity Recognition Using Smartpho
 The run_analysis.R file should be in the same directory as the files: activity_label.txt, features.txt, 
 and the directories: test, train
 
-Calling run_analysis() outputs the data summary file described in CodeBook.md and returns the raw data set created by combining the test and train data sets into one complete data set, combining the activity labels from the test and train data sets into one complete activity label data set, and then combining the test and train subject data into one complete subject data set.  It carefully loads the separate data sets in the same order to preserve the data integrity.
+Calling run_analysis() outputs the data summary file described in CodeBook.md and returns the summary data set by combining the test and train data sets into one complete data set, combining the activity labels from the test and train data sets into one complete activity label data set, and then combining the test and train subject data into one complete subject data set.  It carefully loads the separate data sets in the same order to preserve the data integrity.
 
 Since the only relevant data is in the mean and std columns, we pulled out just these columns by grepping for "mean()" and "std()" in the column names and reducing the dataset down to these columns.  In order to give the activities a properly tidy and descriptive name we changed them to camelCase and remove the dash character (-).
 
