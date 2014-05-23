@@ -9,8 +9,7 @@ activity - characters describing the activity
 
 These columns are the mean of the measurements grouped by subject and activity. They are numeric.
 ---------------------------------------------------------
-tBodyAccMeanX
-
+tBodyAccMeanX  
 tBodyAccMeanY
 tBodyAccMeanZ
 tBodyAccStdX
